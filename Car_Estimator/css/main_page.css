@@ -1,6 +1,6 @@
 /* Шрифт для логотипа */
 @font-face {
-    font-family: "LibreBarcode30";
+    font-family: "LibreBarcode39";
     src: url("../assets/fonts/LibreBarcode39Text-Regular.ttf");
     font-weight: 400;
     font-style: normal;
@@ -11,10 +11,13 @@ html,
 body {
     height: 100%;
     width: 100%;
+    overflow-x: clip;
+    max-width: 100%;
     margin: 0;
 }
 
 .main_page {
+
     height: 300%;
     background: linear-gradient(#E2F1FF, #FFFFFF);
 }
@@ -23,28 +26,54 @@ body {
 .logo_page {
     height: calc(100% / 3);
     width: 100%;
+    z-index: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 #logo {
+
     display: flex;
-    align-items: center;
-    font-family: "LibreBarcode30", serif;
+    justify-content: center;
+    position: fixed;
+    font-family: "LibreBarcode39", serif;
     font-size: 128px;
+
 }
 
 .logo_cars {
     display: flex;
-    align-items: center;
     position: absolute;
+    z-index: 2;
+}
+
+#black_left {
+    width: 484px;
+    height: 332px;
+    position: absolute;
+    top: -332px;
+    left: -484px;
+    background-image: url("../assets/images/Group 23.svg");
+}
+
+#white {
+    width: 476px;
+    height: 282px;
+    position: absolute;
+    top: -282px;
+    left: -476px;
+    background-image: url("../assets/images/Middle one white.svg");
 }
 
 
-#white {
-    width: 678px;
-    height: 581px;
-    background-image: url("../assets/images/White.svg");
+#black_right {
+    width: 484px;
+    height: 332px;
+    position: absolute;
+    top: -332px;
+    left: -484px;
+    background-image: url("../assets/images/Group 23.svg");
 }
 
 /* Описание */
