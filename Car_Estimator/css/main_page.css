@@ -1,0 +1,60 @@
+/* Шрифт для логотипа */
+@font-face {
+    font-family: "LibreBarcode30";
+    src: url("../assets/fonts/LibreBarcode39Text-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+    font-size: 128px;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.main_page {
+    height: 300%;
+    background: linear-gradient(#E2F1FF, #FFFFFF);
+}
+
+/* Страница логотипа */
+.logo_page {
+    height: calc(100% / 3);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    font-family: "LibreBarcode30", serif;
+    font-size: 128px;
+}
+
+.logo_cars {
+    display: flex;
+    align-items: center;
+    position: absolute;
+}
+
+
+#white {
+    width: 678px;
+    height: 581px;
+    background-image: url("../assets/images/White.svg");
+}
+
+/* Описание */
+.description_page {
+    height: calc(100% / 3);
+    width: 100%;
+}
+
+/* Поиск */
+.search_page {
+    height: calc(100% / 3);
+    width: 100%;
+}
