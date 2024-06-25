@@ -1,89 +1,143 @@
-/* Шрифт для логотипа */
-@font-face {
-    font-family: "LibreBarcode39";
-    src: url("../assets/fonts/LibreBarcode39Text-Regular.ttf");
-    font-weight: 400;
-    font-style: normal;
-    font-size: 128px;
+.search {
+    --background: #ffffff;
+    --text-color: #414856;
+    --primary-color: #000000;
+    --border-radius: 10px;
+    --width: 190px;
+    --height: 55px;
+    background: var(--background);
+    width: auto;
+    height: var(--height);
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(#414856, .05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    input[type="text"] {
+        position: relative;
+        width: var(--height);
+        height: var(--height);
+        font: 400 16px 'Varela Round', sans-serif;
+        color: var(--text-color);
+        border: 0;
+        box-sizing: border-box;
+        outline: none;
+        padding: 0 0 0 40px;
+        transition: width .6s ease;
+        z-index: 10;
+        opacity: 0;
+        cursor: pointer;
+        &:focus {
+         z-index: 0;
+         opacity: 1;
+         width: var(--width);
+        ~ .symbol {
+&::before {
+     width: 0%;
+ }
+&:after {
+     clip-path: inset(0% 0% 0% 100%);
+     transition: clip-path .04s linear .105s;
+ }
+.cloud {
+    top: -30px;
+    left: -30px;
+    transform: translate(0, 0);
+    transition: all .6s ease;
 }
-
-html,
-body {
+.lens {
+    top: 20px;
+    left: 15px;
+    transform: translate(0, 0);
+    fill: var(--primary-color);
+    transition: top .5s ease .1s, left .5s ease .1s, fill .3s ease;
+}
+}
+}
+}
+.symbol {
     height: 100%;
     width: 100%;
-    overflow-x: clip;
-    max-width: 100%;
-    margin: 0;
-}
-
-.main_page {
-
-    height: 300%;
-    background: linear-gradient(#E2F1FF, #FFFFFF);
-}
-
-/* Страница логотипа */
-.logo_page {
-    height: calc(100% / 3);
-    width: 100%;
+    position: absolute;
+    top: 0;
     z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#logo {
-
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    font-family: "LibreBarcode39", serif;
-    font-size: 128px;
-
-}
-
-.logo_cars {
-    display: flex;
+&:before {
+     content:"";
+     position: absolute;
+     right: 0;
+     width: 100%;
+     height: 100%;
+     background: var(--primary-color);
+     z-index: -1;
+     transition: width .6s ease;
+ }
+&:after {
+     content:"";
+     position: absolute;
+     top: 21px;
+     left: 21px;
+     width: 20px;
+     height: 20px;
+     border-radius: 50%;
+     background: var(--primary-color);
+     z-index: 1;
+     clip-path: inset(0% 0% 0% 0%);
+     transition: clip-path .04s linear .225s;
+ }
+.cloud,
+.lens {
     position: absolute;
+    fill: #fff;
+    stroke: none;
+    top: 50%;
+    left: 50%;
+}
+.cloud {
+    width: 35px;
+    height: 32px;
+    transform: translate(-50%, -60%);
+    transition: all .6s ease;
+}
+.lens {
+    fill: #fff;
+    width: 16px;
+    height: 16px;
     z-index: 2;
+    top: 24px;
+    left: 24px;
+    transition: top .3s ease, left .3s ease, fill .2s ease .2s;
+    }
 }
-
-#black_left {
-    width: 484px;
-    height: 332px;
-    position: absolute;
-    top: -332px;
-    left: -484px;
-    background-image: url("../assets/images/Group 23.svg");
-}
-
-#white {
-    width: 476px;
-    height: 282px;
-    position: absolute;
-    top: -282px;
-    left: -476px;
-    background-image: url("../assets/images/Middle one white.svg");
 }
 
 
-#black_right {
-    width: 484px;
-    height: 332px;
-    position: absolute;
-    top: -332px;
-    left: -484px;
-    background-image: url("../assets/images/Group 23.svg");
+body {
+    background: #E8EBF3;
+    height: 100vh;
+    font: 400 16px 'Varela Round', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .socials {
+        position: fixed;
+        display: block;
+        left: 20px;
+        bottom: 20px;
+> a {
+    display: block;
+    width: 30px;
+    opacity: var(--opacity, .2);
+    transform: scale(var(--scale, .8));
+    transition: transform .3s cubic-bezier(0.38,-0.12, 0.24, 1.91);
+    &:hover {
+     --scale: 1;
+ }
 }
-
-/* Описание */
-.description_page {
-    height: calc(100% / 3);
-    width: 100%;
 }
-
-/* Поиск */
-.search_page {
-    height: calc(100% / 3);
-    width: 100%;
 }
