@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/dashboard_style.css">
+    <script type="text/javascript" src="../scripts/dashboard.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title></title>
+</head>
+<body>
+<div class="dashboard">
+    <div class="dash_header">
+        <div class="scroll-container">
+            <img src="https://avatars.mds.yandex.net/get-verba/997355/2a0000017e0c104795474ff8a4e115e94d5f/cattouchret" alt="Cinque Terre">
+            <img src="https://avatars.mds.yandex.net/get-verba/216201/2a0000016097de211c15abeb83005e325644/cattouchret" alt="Forest">
+            <img src="https://avatars.mds.yandex.net/get-verba/787013/2a000001609d527ff8f98992397915e8ec15/cattouchret" alt="Northern Lights">
+            <img src="https://avatars.mds.yandex.net/get-verba/997355/2a0000016edfba2196a067f737d36cda1d0d/cattouchret" alt="Mountains">
+        </div>
+        <div class="prev">
+            <a onclick="plusSlides(-1)">&#10094;</a>
+        </div>
+        <div class="next">
+            <a onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="car_info">Porshe</div>
+    </div>
+    <div class="dash_footer">
+        <div class="car_graphs">
+            <div class="price_logo">График цен</div>
+            <div class="graphs">
+                <div id="year_graph"></div>
+                <div class="car_info">
+                    <div id="year_price"></div>
+                    <div id="sell_count"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

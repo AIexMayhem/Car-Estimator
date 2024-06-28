@@ -1,0 +1,71 @@
+body,
+html {
+    height: 100%;
+    width: 100%;
+    overflow-x: clip;
+    margin: 0;
+}
+
+.dashboard {
+    height: 200%;
+    width: 100%;
+    background: linear-gradient(#E2F1FF, #FFFFFF);
+    padding-top: 25px;
+}
+
+.dash_header {
+    height: 50%;
+    width: 100%;
+}
+
+.scroll-container {
+    position: relative;
+    left: 10%;
+    overflow-x: scroll;
+    white-space: nowrap;
+    width: 80%;
+    height: 90%;
+    border-radius: 30px;
+}
+
+.scroll-container::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.scroll-container img {
+    height: 100%;
+    width: auto;
+
+}
+
+.prev {
+    position: absolute;
+    left: 9%;
+    top: 50%;
+    background-color: white;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.next {
+    position: absolute;
+    right: 9%;
+    top: 50%;
+    background-color: white;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.car_info {
+
+    height: auto;
+}
