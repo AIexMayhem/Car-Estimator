@@ -1,58 +1,88 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Search Bar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dropdown</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
-<div class="icon">
-  <img src="car-icon.png" alt="Car Icon">
-</div>
 <div class="search-container">
-  <div class="search-bar">
-    <div class="dropdown">
-      <div>Марка</div>
-      <div class="arrow-down">
-        <img src="down.png" alt="down arrow">
-      </div>
-    </div>
-    <div class="dropdown">
-      <div>Модель</div>
-      <div class="arrow-down">
-        <img src="down.png" alt="down arrow">
-      </div>
-    </div>
-    <div class="dropdown">
-      <div>Год выпуска</div>
-      <div class="arrow-down">
-        <img src="down.png" alt="down arrow">
-      </div>
-    </div>
-    <div class="dropdown">
-      <div>Цвет</div>
-      <div class="arrow-down">
-        <img src="down.png" alt="down arrow">
-      </div>
-    </div>
-    <div class="dropdown">
-      <div>Кузов</div>
-      <div class="arrow-down">
-        <img src="down.png" alt="down arrow">
-      </div>
-    </div>
-    <div class="dropdown">
-      <div>Пробег</div>
-      <div class="arrow-down">
-        <img src="down.png" alt="down arrow">
-      </div>
-    </div>
+  <div class="dropdown-container">
+    <form>
+      <input class="chosen-value" type="text" value="" placeholder="1" id="layout_form">
+      <ul class="value-list" id="layout_input">
+        <li>Audi</li>
+        <li>BMW</li>
+        <li>Mercedes</li>
+        <li>Porshe</li>
+      </ul>
+    </form>
   </div>
-  <div class="arrow-next">
-    <img src="next.png" alt="next arrow">
+
+  <div class="dropdown-container" id="model">
+    <form>
+      <input class="chosen-value" type="text" value="" placeholder="2" id="model_form">
+      <ul class="value-list" id="model_input">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+      </ul>
+    </form>
+  </div>
+
+  <div class="dropdown-container" id="year">
+    <form>
+      <input class="chosen-value" type="text" value="" placeholder="3" id="year_form">
+      <ul class="value-list" id="year_input">
+        <li>1337</li>
+        <li>2288</li>
+        <li>9991</li>
+        <li>9999</li>
+      </ul>
+    </form>
+  </div>
+
+  <div class="dropdown-container" id="color">
+    <form>
+      <input class="chosen-value" type="text" value="" placeholder="4" id="color_form">
+      <ul class="value-list" id="color_input">
+        <li>Голубой 1</li>
+        <li>Голубой 2</li>
+        <li>Голубой 3</li>
+        <li>Голубой 4</li>
+      </ul>
+    </form>
+  </div>
+
+  <div class="dropdown-container" id="body">
+    <form>
+      <input class="chosen-value" type="text" value="" placeholder="5" id="body_form">
+      <ul class="value-list" id="body_input">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+      </ul>
+    </form>
+  </div>
+
+  <div class="dropdown-container" id="odometr">
+    <form>
+      <input class="chosen-value" type="text" value="" placeholder="6" id="odometr_form">
+      <ul class="value-list" id="odometr_input">
+        <li>1 :)</li>
+        <li>5.000</li>
+        <li>10.000</li>
+        <li>99.999+</li>
+      </ul>
+    </form>
   </div>
 </div>
+<script src="index.js"></script>
+
 </body>
 </html>
