@@ -1,9 +1,16 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url("../assets/fonts/Montserrat-Regular.ttf");
+    font-style: normal;
+}
+
 body {
-    font-family: , sans-serif;
+    font-family: Montserrat;
 }
 
 .search-container {
     margin-top: 10%;
+    margin-left: 15%;
     display: flex;
     align-items: center;
 }
@@ -15,9 +22,9 @@ body {
     border: 1px solid #ccc;
     border-radius: 25px 25px 25px 25px;
     overflow: hidden;
-    padding: 5px;
+    padding: 10px 0px;
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .icon {
@@ -34,7 +41,8 @@ body {
 }
 
 .dropdown {
-    padding: 10px 15px;
+    display: flex;
+    padding: 10px 20px;
     border-right: 1px solid #ccc;
     white-space: nowrap;
     overflow: hidden;
@@ -45,10 +53,20 @@ body {
     border-right: none;
 }
 
-.arrow {
+.arrow-next img {
+    width: 26px;
+    height: 18px;
+}
+
+.arrow-next {
     padding: 0 20px;
 }
 
-.arrow span {
-    font-size: 20px;
+.arrow-down img {
+    width: 22px;
+    height: 15px;
+}
+
+.arrow-down {
+    padding-left: 15px;
 }
