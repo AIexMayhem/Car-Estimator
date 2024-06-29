@@ -1,0 +1,54 @@
+body {
+    font-family: , sans-serif;
+}
+
+.search-container {
+    margin-top: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 25px 25px 25px 25px;
+    overflow: hidden;
+    padding: 5px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+    position: absolute;
+    width: 52px;
+    height: 22px;
+    top: 16.7%;
+    padding: 0px 10px;
+}
+
+.icon img {
+    width: 52px;
+    height: 22px;
+}
+
+.dropdown {
+    padding: 10px 15px;
+    border-right: 1px solid #ccc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dropdown:last-child {
+    border-right: none;
+}
+
+.arrow {
+    padding: 0 20px;
+}
+
+.arrow span {
+    font-size: 20px;
+}

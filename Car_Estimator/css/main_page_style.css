@@ -1,0 +1,132 @@
+/* Шрифт для логотипа */
+@font-face {
+    font-family: "LibreBarcode39";
+    src: url("../assets/fonts/LibreBarcode39Text-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+    font-size: 128px;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow-x: clip;
+    margin: 0;
+}
+
+.main_page {
+    height: 300%;
+    width: 100%;
+    background: linear-gradient(#E2F1FF, #FFFFFF);
+}
+
+/* Страница логотипа */
+.logo_page {
+    height: calc(100% / 3);
+    width: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo {
+    position: sticky;
+    font-family: "LibreBarcode39", serif;
+    font-size: 128px;
+    opacity: 0;
+}
+
+.logo_cars {
+    display: flex;
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    z-index: 2;
+}
+
+#cars {
+    width: 988px;
+    height: 678px;
+    background-repeat: no-repeat;
+    background-image: url("../assets/images/cars_group.svg");
+}
+
+/* Описание */
+.description_page {
+    height: calc(100% / 3);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.we_can_do {
+    height: auto;
+    width: auto;
+    position: fixed;
+    top: 35%;
+    display: flex;
+    font-size: 60px;
+    align-self: center;
+    transition: transform 0.5s, opacity 2s;
+    opacity: 0;
+}
+
+.description {
+    height: auto;
+    width: auto;
+    position: fixed;
+    top: 50%;
+    display: flex;
+    align-self: center;
+    font-size: 30px;
+    transition: transform 2s, opacity 0.5s;
+    opacity: 0;
+}
+
+
+/* Поиск */
+.search_page {
+    height: calc(100% / 3);
+    width: 100%;
+}
+
+.arrow {
+    height: 50px;
+    width: 50px;
+    background-size: 50px;
+    position: fixed;
+    z-index: 3;
+    right: 50%;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    background-image: url("../assets/images/down.png");
+}
+
+.arrow:hover {
+    opacity: 0.7;
+}
+
+#arrow_up {
+    top: 0;
+    transform: rotate(180deg);
+    visibility: hidden;
+}
+
+#arrow_down {
+    bottom: 0;
+}
+
+
