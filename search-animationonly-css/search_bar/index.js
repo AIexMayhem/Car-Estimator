@@ -1,12 +1,7 @@
-'use strict';
-
 document.querySelectorAll('.dropdown-container').forEach(function(container) {
   var inputField = container.querySelector('.chosen-value');
-  const layoutForm = $("#layout_form");
   var dropdown = container.querySelector('.value-list');
   var dropdownItems = Array.from(dropdown.querySelectorAll('li'));
-  // dropdown.classList.add('open');
-  // inputField.focus();
 
   var valueArray = [];
   dropdownItems.forEach(function (item) {
@@ -41,12 +36,30 @@ document.querySelectorAll('.dropdown-container').forEach(function(container) {
       dropdownItems.forEach(function (dropdown) {
         dropdown.classList.add('closed');
       });
+      closeDropdown();
     });
   });
 
   inputField.addEventListener('focus', function () {
-    layoutForm.css({"border-radius": "10px 0 0 0", "border-bottom": "0"});
-    inputField.placeholder = 'Type to filter';
+    if (inputField.id === 'layout_form') {
+      $('#layout_form').css({"border-radius": "10px 0 0 0", "border-bottom": "0"});
+    }
+    if (inputField.id === 'model_form') {
+      $('#model_form').css({"border-bottom": "0"});
+    }
+    if (inputField.id === 'year_form') {
+      $('#year_form').css({"border-bottom": "0"});
+    }
+    if (inputField.id === 'color_form') {
+      $('#color_form').css({"border-bottom": "0"});
+    }
+    if (inputField.id === 'body_form') {
+      $('#body_form').css({"border-bottom": "0"});
+    }
+    if (inputField.id === 'odometr_form') {
+      $('#odometr_form').css({"border-radius": "0 10px 0 0", "border-bottom": "0"});
+    }
+
     dropdown.classList.add('open');
     dropdownItems.forEach(function (item) {
       item.classList.remove('closed');
@@ -54,17 +67,32 @@ document.querySelectorAll('.dropdown-container').forEach(function(container) {
   });
 
   inputField.addEventListener('blur', function () {
-    inputField.placeholder = 'Select state';
-    dropdown.classList.remove('open');
-    layoutForm.css({"border-radius": "10px 0 0 10px", "border-bottom": "2px solid #D9D9D9"});
+    if (inputField.id === 'layout_form') {
+      $('#layout_form').css({"border-radius": "10px 0 0 10px", "border-bottom": "2px solid #D9D9D9"});
+    }
+    if (inputField.id === 'model_form') {
+      $('#model_form').css({"border-bottom": "2px solid #D9D9D9"});
+    }
+    if (inputField.id === 'year_form') {
+      $('#year_form').css({"border-bottom": "2px solid #D9D9D9"});
+    }
+    if (inputField.id === 'color_form') {
+      $('#color_form').css({"border-bottom": "2px solid #D9D9D9"});
+    }
+    if (inputField.id === 'body_form') {
+      $('#body_form').css({"border-bottom": "2px solid #D9D9D9"});
+    }
+    if (inputField.id === 'odometr_form') {
+      $('#odometr_form').css({"border-radius": "0 10px 10px 0", "border-bottom": "2px solid #D9D9D9"});
+    }
+    closeDropdown();
   });
 
   document.addEventListener('click', function (evt) {
     var isDropdown = dropdown.contains(evt.target);
     var isInput = inputField.contains(evt.target);
     if (!isDropdown && !isInput) {
-      dropdown.classList.remove('open');
+      closeDropdown();
     }
   });
-
 });
