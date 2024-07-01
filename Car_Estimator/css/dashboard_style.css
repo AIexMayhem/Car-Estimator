@@ -77,7 +77,7 @@ html {
     transition: opacity 0.5s;
 }
 
-.car_name {
+#car_name {
     font-family: Montserrat, serif;
     font-size: 72px;
     height: auto;
@@ -86,7 +86,7 @@ html {
     left: 10%;
 }
 
-.car_info {
+#car_info {
     font-family: Montserrat, serif;
     margin-top: 120px;
     font-size: 32px;
@@ -98,13 +98,67 @@ html {
 .dash_footer {
     height: 50%;
     width: 100%;
+    display: flex;
+}
+
+.car_graphs {
+    margin-inline: 10%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .price_logo {
     font-family: Montserrat, serif;
-    margin-top: 85px;
+    margin-top: 75px;
     font-size: 72px;
     height: auto;
-    position: absolute;
-    left: 10%;
+    margin-bottom: 50px;
+}
+
+#year_graph img{
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+    -webkit-box-shadow: -5px 5px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: -5px 5px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: -5px 5px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.graphs {
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#blocks {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#year_price,
+#sells {
+    -webkit-box-shadow: -5px 5px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: -5px 5px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: -5px 5px 8px 0px rgba(34, 60, 80, 0.2);
+    max-width: 600px;
+    max-height: 175px;
+    font-family: Montserrat;
+    font-size: 50px;
+    background-color: white;
+    height: auto;
+    border-radius: 30px;
+    padding: 30px;
+    margin-left: 20px;
+}
+
+#car_price,
+#car_sell {
+    font-weight: 600;
+    color: #4D869D;
+    font-size: 50px;
 }

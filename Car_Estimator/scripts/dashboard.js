@@ -1,12 +1,10 @@
+
 window.onload = function() {
-    let screen = $(window),
-        gallery = $(".scroll-container"),
+    let gallery = $(".scroll-container"),
         prevArrow = $(".prev"),
         nextArrow = $(".next"),
-        page = $(".dash_header"),
         galleryWidth = (gallery.get(0).scrollWidth - gallery.width()),
         gallery_scroll = gallery.scrollLeft(),
-        scrollTop = screen.scrollTop(),
         flagPressedPrev = false,
         flagPressedNext = false;
 
@@ -17,9 +15,15 @@ window.onload = function() {
         Yearsell = localStorage.getItem("Yearsell"),
         Odometer = localStorage.getItem("Odometer"),
         Color = localStorage.getItem("Color"),
-        Price = 0;
+        Price = 0,
+        Photo,
+        Sells = 0;
+    document.title = Model + Year;
+    document.getElementById("car_name").innerHTML = Model;
+    document.getElementById("car_info").innerHTML = Year + " г. | " + Color + " | " + Body;
 
     let xhr = null;
+
     let getXmlHttpRequestObject = function () {
         if (!xhr) {
             // Create a new XMLHttpRequest object
@@ -40,8 +44,11 @@ window.onload = function() {
         // Check response is ready or not
         if (xhr.readyState == 4 && xhr.status == 201) {
             console.log("Data creation response received!");
-            Price = parseFloat(xhr.responseText);
-            console.log(Price);
+            let response = JSON.parse(xhr.responseText);
+            Price = response["Price"];
+            Photo = response["Photos"];
+            Sells = response["Sell"]
+            console.log(Photo);
         }
     }
 
@@ -52,6 +59,7 @@ window.onload = function() {
             return;
         }
         console.log("Sending data: " + dataToSend);
+
         xhr = getXmlHttpRequestObject();
         xhr.onreadystatechange = sendDataCallback;
         // asynchronous requests
@@ -87,6 +95,41 @@ window.onload = function() {
     nextArrow.on("mouseup", function() { flagPressedNext = false; })
     prevArrow.on("mouseup", function() { flagPressedPrev = false; })
 
+    setTimeout(() => {
+        let gallery_container = document.getElementById("scroll_gallery");
+        if (Photo.length === 0) {
+            for (let i = 0; i < 3; i++) {
+                let imgs = document.createElement("img");
+                imgs.src = "../assets/images/car.png";
+                gallery_container.appendChild(imgs);
+            }
+        }
+        else if (Photo.length < 3) {
+            for (let i = 0; i < 3; i++) {
+                let imgs = document.createElement("img");
+                imgs.src = Photo[Math.floor(Math.random() * Photo.length)];
+                gallery_container.appendChild(imgs);
+            }
+        }
+        for (let i = 0; i < Photo.length; i++) {
+            let imgs = document.createElement("img");
+            imgs.src = Photo[i];
+            gallery_container.appendChild(imgs);
+        }
+    }, 2000);
+
+    setTimeout(() => {
+        let img= document.createElement("img");
+        img.src = "../backend/graph.png"
+        img.id = "year_graph_pic"
+        let year_div = document.getElementById("year_graph");
+        year_div.appendChild(img);
+        document.getElementById("year_text").innerHTML = ("Цена в " + Yearsell + " году будет: ");
+        document.getElementById("car_price").innerHTML = ('~' + Price + '$');
+        document.getElementById("sell_text").innerHTML = ("Количество продаж за последние 8 лет:");
+        document.getElementById("car_sell").innerHTML = ('~' + Sells + ' шт.');
+        }, 2000);
+
     gallery.scroll(function() {
         gallery_scroll = gallery.scrollLeft();
         galleryWidth = (gallery.get(0).scrollWidth - gallery.width());
@@ -101,8 +144,5 @@ window.onload = function() {
         if (flagPressedNext) { gallery.scrollLeft(gallery_scroll + 5); }
     })
 
-    screen.scroll(function() {
-        scrollTop = screen.scrollTop();
 
-    })
 }

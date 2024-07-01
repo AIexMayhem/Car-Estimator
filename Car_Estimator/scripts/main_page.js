@@ -171,6 +171,8 @@ window.onload = function(){
         localStorage.setItem("Odometer", document.getElementById("odometer_form").value);
         localStorage.setItem("Yearsell", document.getElementById("yearsell_form").value);
         window.location.href = "dashboard.html";
+
+
     })
 
     setTimeout(() => { addListenersToSearchContainer(); }, 100);
