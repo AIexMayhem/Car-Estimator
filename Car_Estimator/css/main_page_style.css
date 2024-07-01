@@ -1,0 +1,370 @@
+/* Шрифт для логотипа */
+@font-face {
+    font-family: "LibreBarcode39";
+    src: url("../assets/fonts/LibreBarcode39Text-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+    font-size: 128px;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow-x: clip;
+    margin: 0;
+}
+
+.main_page {
+    height: 300%;
+    width: 100%;
+    background: linear-gradient(#E2F1FF, #FFFFFF);
+}
+
+/* Страница логотипа */
+.logo_page {
+    height: calc(100% / 3);
+    width: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+}
+
+.wrapper {
+    width: 100%;
+    height: calc(100% / 3);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo {
+    position: sticky;
+    font-family: "LibreBarcode39", serif;
+    font-size: 128px;
+    opacity: 0;
+}
+
+.logo_cars {
+    display: flex;
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    z-index: 2;
+}
+
+#cars {
+    width: 988px;
+    height: 678px;
+    background-repeat: no-repeat;
+    background-image: url("../assets/images/cars_group.svg");
+}
+
+/* Описание */
+.description_page {
+    height: calc(80% / 3);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.we_can_do {
+    font-family: "Montserrat", Serif;
+    font-weight: 800;
+    letter-spacing: 10px;
+    height: auto;
+    width: auto;
+    position: fixed;
+    top: 35%;
+    display: flex;
+    font-size: 60px;
+    align-self: center;
+    transition: transform 0.5s, opacity 2s;
+    opacity: 0;
+}
+
+.description {
+    font-family: "Montserrat", serif;
+    height: auto;
+    width: auto;
+    position: fixed;
+    letter-spacing: 5px;
+    top: 48%;
+    display: flex;
+    align-self: center;
+    text-align: center;
+    font-size: 32px;
+    transition: transform 0.7s, opacity 0.5s;
+    opacity: 0;
+}
+
+
+/* Поиск */
+
+
+.arrow {
+    height: 50px;
+    width: 50px;
+    background-size: 50px;
+    position: fixed;
+    z-index: 3;
+    right: 50%;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    background-image: url("../assets/images/down.png");
+}
+
+.arrow:hover {
+    opacity: 0.7;
+}
+
+#arrow_up {
+    top: 0;
+    transform: rotate(180deg);
+    visibility: hidden;
+}
+
+#arrow_down {
+    bottom: 0;
+}
+
+.search_page {
+    height: calc(30% / 3);
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+.search_text{
+    font-family: 'Montserrat', Serif;
+    font-weight: 600;
+    font-size: 75px;
+    margin-top: 250px;
+    margin-bottom: 150px;
+    align-self: center;
+    text-align: center;
+    transition: opacity 0.5s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+form {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    position: relative;
+    width: 250px;
+    left: 50%;
+}
+
+
+
+.search-container {
+    align-self: center;
+    text-align: center;
+    display: flex;
+    transition: opacity 0.5s;
+    z-index: 1000;
+}
+
+.chosen-value,
+.value-list {
+    border-radius: 0 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.chosen-value {
+    font-family: 'Montserrat';
+    border-radius: 0 0 0 0;
+    font-weight: 600;
+    letter-spacing: 0px;
+    height: 80px;
+    font-size: 24px;
+    padding: 16px;
+    background-color: #ffffff;
+    border: 3px solid transparent;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+.chosen-value::-webkit-input-placeholder {
+    color: #a8a8a8;
+}
+.chosen-value:hover {
+    background-color: #e7e7e7;
+    cursor: pointer;
+}
+.chosen-value:hover::-webkit-input-placeholder {
+    color: #a8a8a8;
+}
+.chosen-value:focus, .chosen-value.open {
+    outline: 0;
+    background-color: #e7e7e7;
+    color: #000;
+}
+.chosen-value:focus::-webkit-input-placeholder, .chosen-value.open::-webkit-input-placeholder {
+    color: #000;
+}
+
+.value-list {
+    list-style: none;
+    margin-top: 80px;
+    box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    max-height: 0;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+.value-list.open {
+    max-height: 320px;
+
+    border-right: 2px solid #D9D9D9;
+    border-bottom: 2px solid #D9D9D9;
+    border-left: 2px solid #D9D9D9;
+
+    overflow: auto;
+}
+.value-list li {
+    position: relative;
+    height: 52px;
+    background-color: #ffffff;
+    padding: 1rem;
+    font-size: 1.1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+    opacity: 1;
+}
+
+.value-list li:hover {
+    background-color: #dcdcdc;
+}
+
+.value-list li.closed {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    opacity: 0;
+}
+
+.next-arrow,
+.year-arrow{
+    display: flex;
+    width: 39px;
+    height: 27px;
+    margin-left: 145px;
+    margin-top: 25px;
+    transition: .3s ease-in-out;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.year-arrow {
+    margin-left: 0;
+    position: relative;
+    left: -37.5%;
+    top: 0;
+    opacity: 0;
+    transition: opacity 1.5s;
+    scale: 0;
+}
+/* верхушка меню */
+#layout_form{
+    border-radius: 20px 0 0 20px;
+}
+
+#odometer_form{
+    border-radius: 0 20px 20px 0;
+}
+
+/* выпадающее меню */
+#layout_input,
+#model_input,
+#year_input,
+#color_input,
+#body_input,
+#odometer_input {
+    border-radius: 0 0 20px 20px;
+}
+
+#color_form,
+#year_form,
+#HP_form,
+#body_form,
+#model_form,
+#layout_form,
+#odometer_form,
+#layout_form:hover{
+    border-top: 2px solid #D9D9D9;
+    border-right: 2px solid #D9D9D9;
+    border-bottom: 2px solid #D9D9D9;
+    border-left: 2px solid #D9D9D9;
+}
+
+.new-year {
+    position: relative;
+    top: 0;
+    right: 4%;
+    visibility: hidden;
+    transition: .3s ease-in-out;
+}
+
+.new-year-value,
+.value-list {
+    border-radius: 0 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.new-year-value {
+    font-family: 'Montserrat';
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    height: 80px;
+    font-size: 24px;
+    padding: 16px;
+    background-color: #ffffff;
+    border: 2px solid #D9D9D9;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+
+
+.new-year-value::-webkit-input-placeholder {
+    color: #a8a8a8;
+}
+.new-year-value:hover {
+    background-color: #e7e7e7;
+    cursor: pointer;
+}
+.new-year-value:hover::-webkit-input-placeholder {
+    color: #a8a8a8;
+}
+.new-year-value:focus, .new-year-value.open {
+    outline: 0;
+    background-color: #e7e7e7;
+    color: #000;
+}
+.new-year-value:focus::-webkit-input-placeholder, .new-year-value.open::-webkit-input-placeholder {
+    color: #000;
+}
+
