@@ -175,7 +175,7 @@ window.onload = function(){
 
     })
 
-    setTimeout(() => { addListenersToSearchContainer(); }, 100);
+    setTimeout(() => { addListenersToSearchContainer(); }, 1000);
 
     screen.scroll(function() {
         screenWidth = page.width();
