@@ -5,6 +5,7 @@ from flask_cors import CORS
 import joblib
 import pandas as pd
 import scipy
+import random
 import numpy as np
 from scipy.interpolate import make_interp_spline, BSpline
 import matplotlib.pyplot as plt
@@ -78,8 +79,10 @@ def get_car_info(car_model: str, Year: int, HP: int, Body: str, Yearsell: int, O
             print(pictures)
         if sells.Car[car] == car_model:
             sell = int(sells.Count[car])
-
-    return [abs(int(np.round(y_pred[0], 0))), pictures, sell]
+    price = int(np.round(y_pred[0], 0))
+    if price < 0:
+        price = 200 + random.randint(-100, 100)
+    return [price, pictures, sell]
 
 
 @app.route('/car', methods=["GET", "POST"])
