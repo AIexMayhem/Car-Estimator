@@ -199,7 +199,8 @@ window.onload = function(){
     })
 
     yearArrow.on("click", function() {
-        localStorage.setItem("Model", document.getElementById("make_form").value);
+        localStorage.setItem("Make", document.getElementById("make_form").value);
+        localStorage.setItem("Model", document.getElementById("model_form").value);
         localStorage.setItem("Year", document.getElementById("year_form").value);
         localStorage.setItem("Color", document.getElementById("color_form").value);
         localStorage.setItem("HP", document.getElementById("HP_form").value);

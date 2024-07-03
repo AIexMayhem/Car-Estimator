@@ -36,7 +36,8 @@ window.onload = function() {
         flagPressedPrev = false,
         flagPressedNext = false;
 
-    let Model = localStorage.getItem("Model"),
+    let Make = localStorage.getItem("Make"),
+        Model = localStorage.getItem("Model"),
         Year = localStorage.getItem("Year"),
         HP = localStorage.getItem("HP"),
         Body = localStorage.getItem("Body"),
@@ -46,8 +47,11 @@ window.onload = function() {
         Price = 0,
         Photo,
         Sells = 0;
-    document.title = Model + Year;
-    document.getElementById("car_name").innerHTML = Model;
+
+    console.log(Make, Model)
+
+    document.title = Make + ' ' + Model + ' ' + Year;
+    document.getElementById("car_name").innerHTML = Make + ' ' + Model;
     document.getElementById("car_info").innerHTML = Year + " г. | " + Color + " | " + Body;
     document.getElementById("year_text").innerHTML = ("Цена в " + Yearsell + " году будет: ");
     document.getElementById("sell_text").innerHTML = ("Количество продаж за последние 8 лет:");
@@ -88,7 +92,7 @@ window.onload = function() {
 
     function sendData() {
         let dataToSend = [
-            Model, parseInt(Year), parseInt(HP), Body, parseInt(Yearsell), parseInt(Odometer), Color
+            Make, Model, parseInt(Year), parseInt(HP), Body, parseInt(Yearsell), parseInt(Odometer), Color
         ];
         if (!dataToSend) {
             console.log("Data is empty.");
