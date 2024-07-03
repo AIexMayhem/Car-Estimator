@@ -1,3 +1,31 @@
+let loadPhotos = function (Photo) {
+    let gallery_container = document.getElementById("scroll_gallery"),
+        images;
+    if (Photo.length === 0) {
+        for (let photo = 0; photo < 3; photo++) {
+            images = document.createElement("img");
+            images.src = "../assets/images/car.png";
+            gallery_container.appendChild(images);
+        }
+    }
+    else {
+        for (let photo = 0; photo < Math.max(3, Photo.length); photo++) {
+            images = document.createElement("img");
+            images.src = Photo[photo % Photo.length];
+            gallery_container.appendChild(images);
+        }
+    }
+
+}
+
+let loadGraph = function () {
+    let img= document.createElement("img"),
+        year_div;
+    img.src = "../backend/graph.png"
+    img.id = "year_graph_pic"
+    year_div = document.getElementById("year_graph");
+    year_div.appendChild(img);
+}
 
 window.onload = function() {
     let gallery = $(".scroll-container"),
@@ -21,7 +49,8 @@ window.onload = function() {
     document.title = Model + Year;
     document.getElementById("car_name").innerHTML = Model;
     document.getElementById("car_info").innerHTML = Year + " г. | " + Color + " | " + Body;
-
+    document.getElementById("year_text").innerHTML = ("Цена в " + Yearsell + " году будет: ");
+    document.getElementById("sell_text").innerHTML = ("Количество продаж за последние 8 лет:");
     let xhr = null;
 
     let getXmlHttpRequestObject = function () {
@@ -48,12 +77,19 @@ window.onload = function() {
             Price = response["Price"];
             Photo = response["Photos"];
             Sells = response["Sell"]
-            console.log(Price);
+
+            loadPhotos(Photo);
+            loadGraph();
+
+            document.getElementById("car_price").innerHTML = ('~' + Price + '$');
+            document.getElementById("car_sell").innerHTML = ('~' + Sells + ' шт.');
         }
     }
 
     function sendData() {
-        let dataToSend = [Model, parseInt(Year), parseInt(HP), Body, parseInt(Yearsell), parseInt(Odometer), Color];
+        let dataToSend = [
+            Model, parseInt(Year), parseInt(HP), Body, parseInt(Yearsell), parseInt(Odometer), Color
+        ];
         if (!dataToSend) {
             console.log("Data is empty.");
             return;
@@ -95,40 +131,6 @@ window.onload = function() {
     nextArrow.on("mouseup", function() { flagPressedNext = false; })
     prevArrow.on("mouseup", function() { flagPressedPrev = false; })
 
-    setTimeout(() => {
-        let gallery_container = document.getElementById("scroll_gallery");
-        if (Photo.length === 0) {
-            for (let i = 0; i < 3; i++) {
-                let imgs = document.createElement("img");
-                imgs.src = "../assets/images/car.png";
-                gallery_container.appendChild(imgs);
-            }
-        }
-        else if (Photo.length < 3) {
-            for (let i = 0; i < 3; i++) {
-                let imgs = document.createElement("img");
-                imgs.src = Photo[Math.floor(Math.random() * Photo.length)];
-                gallery_container.appendChild(imgs);
-            }
-        }
-        for (let i = 0; i < Photo.length; i++) {
-            let imgs = document.createElement("img");
-            imgs.src = Photo[i];
-            gallery_container.appendChild(imgs);
-        }
-    }, 2000);
-
-    setTimeout(() => {
-        let img= document.createElement("img");
-        img.src = "../backend/graph.png"
-        img.id = "year_graph_pic"
-        let year_div = document.getElementById("year_graph");
-        year_div.appendChild(img);
-        document.getElementById("year_text").innerHTML = ("Цена в " + Yearsell + " году будет: ");
-        document.getElementById("car_price").innerHTML = ('~' + Price + '$');
-        document.getElementById("sell_text").innerHTML = ("Количество продаж за последние 8 лет:");
-        document.getElementById("car_sell").innerHTML = ('~' + Sells + ' шт.');
-        }, 2000);
 
     gallery.scroll(function() {
         gallery_scroll = gallery.scrollLeft();
