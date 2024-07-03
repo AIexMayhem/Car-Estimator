@@ -8,7 +8,8 @@ To launch app you should lead this plan:
 4) Insert you car species
 5) Get car price and info
 
-Figma: https://www.figma.com/design/CfgJgK4OwEes9OjVOWYBWi/CAR-ESTIMATOR?m=dev&node-id=0%3A1&t=NAbd90A9XBCEjKmu-1\
+Figma: https://www.figma.com/design/CfgJgK4OwEes9OjVOWYBWi/CAR-ESTIMATOR?m=dev&node-id=0%3A1&t=NAbd90A9XBCEjKmu-1
+
 Google Collab: https://colab.research.google.com/drive/10jpg2uX0paPm-am67XX5Pg7iLZcLZYec?usp=sharing 
 
 Tech-lead: Ospelnikov Alexey\
