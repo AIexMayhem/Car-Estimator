@@ -48,7 +48,7 @@ window.onload = function() {
             Price = response["Price"];
             Photo = response["Photos"];
             Sells = response["Sell"]
-            console.log(Photo);
+            console.log(Price);
         }
     }
 
