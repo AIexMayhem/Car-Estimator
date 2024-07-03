@@ -12,6 +12,11 @@ Figma link: https://www.figma.com/design/CfgJgK4OwEes9OjVOWYBWi/CAR-ESTIMATOR?m=
 
 Google Collab link: https://colab.research.google.com/drive/10jpg2uX0paPm-am67XX5Pg7iLZcLZYec?usp=sharing 
 
-Tech-lead: Ospelnikov Alexey                                                                                                                       Frontend: Ospelnikov Alexey, Yakshin Artemiy                                                                                                         Design: Yakshin Artemiy, Ospelnikov Alexey                                                                                                          Backend: Ospelnikov Alexey, Ananiev Nikita                                                                                                              Data-science: Grigory Kapustin, Ospelnikov Alexey, Ananiev Nikita                                                                                           Idea author: Grigory Kapustin
+ Tech-lead: Ospelnikov Alexey
+ Frontend: Ospelnikov Alexey, Yakshin Artemiy
+ Design: Yakshin Artemiy, Ospelnikov Alexey
+ Backend: Ospelnikov Alexey, Ananiev Nikita
+ Data-science: Grigory Kapustin, Ospelnikov Alexey, Ananiev Nikita
+ Idea author: Grigory Kapustin
 
 Stack: HTML + CSS, JS, Python + Flask
