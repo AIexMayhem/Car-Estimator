@@ -167,7 +167,7 @@ body {
 }
 .dropdown-container {
 
-    flex: 0 0 13.5%;
+    flex: 0 0 10%;
 }
 form {
 
@@ -280,7 +280,7 @@ form {
 }
 
 /* верхушка меню */
-#layout_form{
+#make_form{
     border-radius: 20px 0 0 20px;
 }
 
@@ -289,7 +289,7 @@ form {
 }
 
 /* выпадающее меню */
-#layout_input,
+#make_input,
 #model_input,
 #year_input,
 #color_input,
@@ -302,9 +302,10 @@ form {
 #year_form,
 #HP_form,
 #body_form,
-#layout_form,
+#make_form,
 #odometer_form,
-#layout_form:hover {
+#model_form,
+#make_form:hover {
     border-top: 2px solid #D9D9D9;
     border-right: 2px solid #D9D9D9;
     border-bottom: 2px solid #D9D9D9;
@@ -370,11 +371,13 @@ form {
 .new-year-value:hover::-webkit-input-placeholder {
     color: #a8a8a8;
 }
-.new-year-value:focus, .new-year-value.open {
+.new-year-value:focus,
+.new-year-value.open {
     outline: 0;
     background-color: #e7e7e7;
     color: #000;
 }
-.new-year-value:focus::-webkit-input-placeholder, .new-year-value.open::-webkit-input-placeholder {
+.new-year-value:focus::-webkit-input-placeholder,
+.new-year-value.open::-webkit-input-placeholder {
     color: #000;
 }

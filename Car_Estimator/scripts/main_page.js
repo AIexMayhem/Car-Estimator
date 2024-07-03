@@ -1,3 +1,5 @@
+let makes = new Map();
+
 let loadUniqueDataToLi = function (input, path) {
     fetch(path)
         .then(response => response.text())
@@ -58,10 +60,12 @@ let addListenersToSearchContainer = function () {
 
         inputField.addEventListener('focus', function () {
             let form = $('#' + inputField.id);
-            if (inputField.id === 'layout_form') {
+            let make = document.getElementById("make_form").value;
+            if (inputField.id === 'make_form') {
                 form.css({"border-radius": "20px 0 0 0", "border-bottom": "0"});
             }
-            else if (inputField.id === "year_form" || inputField.id === "color_form" || inputField.id === "body_form") {
+            else if (inputField.id === "year_form" || inputField.id === "color_form"
+                || inputField.id === "body_form" || inputField.id === "model_form") {
                 form.css({"border-bottom": "0"});
             }
             else if (inputField.id === 'odometer_form') {
@@ -69,17 +73,30 @@ let addListenersToSearchContainer = function () {
             }
 
             dropdown.classList.add('open');
+
             dropdownItems.forEach(function (item) {
-                item.classList.remove('closed');
+                if (inputField.id === "model_form" && make !== '') {
+                    if (makes.get(make).includes(item.textContent)) {
+                        item.classList.remove('closed')
+                    }
+                    else {
+                        item.classList.add('closed');
+                    }
+                }
+                else {
+                    item.classList.remove('closed')
+                }
+
             });
         });
 
         inputField.addEventListener('blur', function () {
             let form = $('#' + inputField.id);
-            if (inputField.id === 'layout_form') {
+            if (inputField.id === 'make_form') {
                 form.css({"border-radius": "20px 0 0 20px", "border-bottom": "2px solid #D9D9D9"});
             }
-            else if (inputField.id === "year_form" || inputField.id === "color_form" || inputField.id === "body_form") {
+            else if (inputField.id === "year_form" || inputField.id === "color_form" ||
+                inputField.id === "body_form" || inputField.id === "model_form") {
                 form.css({"border-bottom": "2px solid #D9D9D9"});
             }
             else if (inputField.id === 'odometer_form') {
@@ -103,6 +120,25 @@ let addListenersToSearchContainer = function () {
         // Перемещение второй панели на место первой
         document.querySelector('.panel-2').style.top = '0';
     });}
+
+let loadMakeMap = function () {
+    fetch("../files/Model.txt")
+        .then(response => response.text())
+        .then(data => {
+            let dataSplit = data.split('\n')
+
+            for (let i = 0; i < dataSplit.length; i++) {
+                let make = dataSplit[i].split(" | ")[0];
+                let model = dataSplit[i].split(" | ")[1].slice(0, -1);
+                if (!makes.has(make)) {
+                    makes.set(make, [model]);
+                }
+                else {
+                    makes.get(make).push(model);
+                }
+            }
+        })
+}
 
 
 window.onload = function(){
@@ -132,10 +168,12 @@ window.onload = function(){
     const carGroupWidth = cars.width(),
         carGroupHeight = cars.height();
 
-    loadUniqueDataToLi("layout_input", "../files/Model.txt");
+    loadUniqueDataToLi("make_input", "../files/Make.txt");
+    loadUniqueDataToLi("model_input", "../files/Model_unq.txt");
     loadUniqueDataToLi("color_input", "../files/Color.txt");
     loadUniqueDataToLi("body_input", "../files/Body.txt");
-
+    loadMakeMap();
+    console.log(makes);
     nextArrow.on("click", function () {
         nextArrow.css({ width: "0px", height: "0px" });
         newYear.css({ top: "40%" });
@@ -163,7 +201,7 @@ window.onload = function(){
     })
 
     yearArrow.on("click", function() {
-        localStorage.setItem("Model", document.getElementById("layout_form").value);
+        localStorage.setItem("Model", document.getElementById("make_form").value);
         localStorage.setItem("Year", document.getElementById("year_form").value);
         localStorage.setItem("Color", document.getElementById("color_form").value);
         localStorage.setItem("HP", document.getElementById("HP_form").value);
