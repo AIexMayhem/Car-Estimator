@@ -1,4 +1,22 @@
 let makes = new Map();
+let loadMakeMap = function () {
+    fetch("../files/Make_Model.txt")
+        .then(response => response.text())
+        .then(data => {
+            let dataSplit = data.split('\n')
+
+            for (let i = 0; i < dataSplit.length; i++) {
+                let make = dataSplit[i].split(" | ")[0];
+                let model = dataSplit[i].split(" | ")[1].slice(0, -1);
+                if (!makes.has(make)) {
+                    makes.set(make, [model]);
+                }
+                else {
+                    makes.get(make).push(model);
+                }
+            }
+        })
+}
 
 let loadUniqueDataToLi = function (input, path) {
     fetch(path)
@@ -64,13 +82,13 @@ let addListenersToSearchContainer = function () {
             if (inputField.id === 'make_form') {
                 form.css({"border-radius": "20px 0 0 0", "border-bottom": "0"});
             }
-            else if (inputField.id === "year_form" || inputField.id === "color_form"
-                || inputField.id === "body_form" || inputField.id === "model_form") {
-                form.css({"border-bottom": "0"});
-            }
             else if (inputField.id === 'odometer_form') {
                 form.css({"border-radius": "0 20px 0 0", "border-bottom": "0"});
             }
+            else {
+                form.css({"border-bottom": "0"});
+            }
+
 
             dropdown.classList.add('open');
 
@@ -95,12 +113,11 @@ let addListenersToSearchContainer = function () {
             if (inputField.id === 'make_form') {
                 form.css({"border-radius": "20px 0 0 20px", "border-bottom": "2px solid #D9D9D9"});
             }
-            else if (inputField.id === "year_form" || inputField.id === "color_form" ||
-                inputField.id === "body_form" || inputField.id === "model_form") {
-                form.css({"border-bottom": "2px solid #D9D9D9"});
-            }
             else if (inputField.id === 'odometer_form') {
                 form.css({"border-radius": "0 20px 20px 0", "border-bottom": "2px solid #D9D9D9"});
+            }
+            else {
+                form.css({"border-bottom": "2px solid #D9D9D9"});
             }
             closeDropdown();
         });
@@ -112,34 +129,15 @@ let addListenersToSearchContainer = function () {
                 closeDropdown();
             }
         });
-});
+    });
 
     document.querySelector('.next-arrow').addEventListener('click', function() {
         // Перемещение первой панели вверх
         document.querySelector('.panel-1').style.top = '-100%';
         // Перемещение второй панели на место первой
         document.querySelector('.panel-2').style.top = '0';
-    });}
-
-let loadMakeMap = function () {
-    fetch("../files/Model.txt")
-        .then(response => response.text())
-        .then(data => {
-            let dataSplit = data.split('\n')
-
-            for (let i = 0; i < dataSplit.length; i++) {
-                let make = dataSplit[i].split(" | ")[0];
-                let model = dataSplit[i].split(" | ")[1].slice(0, -1);
-                if (!makes.has(make)) {
-                    makes.set(make, [model]);
-                }
-                else {
-                    makes.get(make).push(model);
-                }
-            }
-        })
+    });
 }
-
 
 window.onload = function(){
     let screen = $(window),
@@ -169,11 +167,11 @@ window.onload = function(){
         carGroupHeight = cars.height();
 
     loadUniqueDataToLi("make_input", "../files/Make.txt");
-    loadUniqueDataToLi("model_input", "../files/Model_unq.txt");
+    loadUniqueDataToLi("model_input", "../files/Model.txt");
     loadUniqueDataToLi("color_input", "../files/Color.txt");
     loadUniqueDataToLi("body_input", "../files/Body.txt");
     loadMakeMap();
-    console.log(makes);
+
     nextArrow.on("click", function () {
         nextArrow.css({ width: "0px", height: "0px" });
         newYear.css({ top: "40%" });
@@ -187,7 +185,7 @@ window.onload = function(){
     arrowUp.on("click", function() {
         window.scrollTo({
             left: 0,
-            top:-screenHeight + 1 + scrollTop - (scrollTop % screenHeight),
+            top: scrollTop - screenHeight + 1 - (scrollTop % screenHeight),
             behavior: "smooth"
         });
     })
@@ -195,7 +193,7 @@ window.onload = function(){
     arrowDown.on("click", function() {
         window.scrollTo({
             left: 0,
-            top: screenHeight + 1 + scrollTop - (scrollTop % screenHeight),
+            top: scrollTop + screenHeight + 1 - (scrollTop % screenHeight),
             behavior: "smooth"
         });
     })
@@ -209,8 +207,6 @@ window.onload = function(){
         localStorage.setItem("Odometer", document.getElementById("odometer_form").value);
         localStorage.setItem("Yearsell", document.getElementById("yearsell_form").value);
         window.location.href = "dashboard.html";
-
-
     })
 
     setTimeout(() => { addListenersToSearchContainer(); }, 1000);

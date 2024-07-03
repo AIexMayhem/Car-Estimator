@@ -136,11 +136,11 @@ window.onload = function() {
         gallery_scroll = gallery.scrollLeft();
         galleryWidth = (gallery.get(0).scrollWidth - gallery.width());
 
-        if (gallery_scroll / galleryWidth * 100 > 10) { prevArrow.css({opacity: 1}); }
-        else { prevArrow.css({opacity: 0}); }
+        if (gallery_scroll / galleryWidth * 100 > 10) { prevArrow.css({ opacity: 1 }); }
+        else { prevArrow.css({ opacity: 0 }); }
 
-        if (gallery_scroll / galleryWidth * 100 >= 90) { nextArrow.css({opacity: 0}); }
-        else { nextArrow.css({opacity: 1}); }
+        if (gallery_scroll / galleryWidth * 100 >= 90) { nextArrow.css({ opacity: 0 }); }
+        else { nextArrow.css({ opacity: 1 }); }
 
         if (flagPressedPrev) { gallery.scrollLeft(gallery_scroll - 5); }
         if (flagPressedNext) { gallery.scrollLeft(gallery_scroll + 5); }
