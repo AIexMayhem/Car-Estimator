@@ -1,0 +1,16 @@
+White
+Grey
+Black
+Red
+Silver
+Blue
+Green
+Beige
+Gold
+Orange
+Burgundy
+Yellow
+Brown
+Purple
+Teal
+Pink

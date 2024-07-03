@@ -6,33 +6,37 @@
     <link rel="stylesheet" href="../css/dashboard_style.css">
     <script type="text/javascript" src="../scripts/dashboard.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
     <title></title>
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Expires" CONTENT="-1">
 </head>
+
 <body>
 <div class="dashboard">
     <div class="dash_header">
-        <div class="scroll-container">
-            <img src="https://avatars.mds.yandex.net/get-verba/997355/2a0000017e0c104795474ff8a4e115e94d5f/cattouchret" alt="Cinque Terre">
-            <img src="https://avatars.mds.yandex.net/get-verba/216201/2a0000016097de211c15abeb83005e325644/cattouchret" alt="Forest">
-            <img src="https://avatars.mds.yandex.net/get-verba/787013/2a000001609d527ff8f98992397915e8ec15/cattouchret" alt="Northern Lights">
-            <img src="https://avatars.mds.yandex.net/get-verba/997355/2a0000016edfba2196a067f737d36cda1d0d/cattouchret" alt="Mountains">
+        <div class="scroll-container" id="scroll_gallery">
         </div>
-        <div class="prev">
-            <a onclick="plusSlides(-1)">&#10094;</a>
-        </div>
-        <div class="next">
-            <a onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <div class="car_info">Porshe</div>
+        <div class="prev">&#10094;</div>
+        <div class="next">&#10095;</div>
+        <div id="car_name"></div>
+        <div id="car_info"></div>
     </div>
     <div class="dash_footer">
         <div class="car_graphs">
-            <div class="price_logo">График цен</div>
+            <div class="price_logo">График изменения цены</div>
             <div class="graphs">
                 <div id="year_graph"></div>
-                <div class="car_info">
-                    <div id="year_price"></div>
-                    <div id="sell_count"></div>
+                <div id="blocks">
+                    <div id="year_price">
+                        <div id="year_text"></div>
+                        <span id="car_price"></span>
+                    </div>
+                    <div id="sells">
+                        <div id="sell_text"></div>
+                        <span id="car_sell"></span>
+                    </div>
                 </div>
             </div>
         </div>

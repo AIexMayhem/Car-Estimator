@@ -1,0 +1,10 @@
+Pickup
+Coupe
+Hatchback
+Sedan
+Wagon
+SUV
+Convertible
+Liftback
+Van
+Limousine
