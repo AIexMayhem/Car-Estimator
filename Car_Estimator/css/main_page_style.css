@@ -161,19 +161,24 @@ body {
     text-align: center;
     display: flex;
     transition: opacity 0.5s;
-    z-index: 1000;
+    z-index: 5;
     width: 100%;
     justify-content: center;
 }
+.dropdown-container {
 
+    flex: 0 0 13.5%;
+}
 form {
+
     font-family: 'Montserrat';
     font-weight: 600;
     position: relative;
-    max-width: 300px;
     min-width: 180px;
+    width: auto;
     left: 50%;
 }
+
 
 .chosen-value,
 .value-list {
@@ -263,27 +268,17 @@ form {
     opacity: 0;
 }
 
-.next-arrow,
-.year-arrow{
+.next-arrow {
     display: flex;
     width: 39px;
     height: 27px;
-    margin-left: 145px;
+    margin-left: 10%;
     margin-top: 25px;
     transition: .3s ease-in-out;
     z-index: 5;
     cursor: pointer;
 }
 
-.year-arrow {
-    margin-left: 0;
-    position: relative;
-    left: -37.5%;
-    top: 0;
-    opacity: 0;
-    transition: opacity 1.5s;
-    scale: 0;
-}
 /* верхушка меню */
 #layout_form{
     border-radius: 20px 0 0 20px;
@@ -307,10 +302,9 @@ form {
 #year_form,
 #HP_form,
 #body_form,
-#model_form,
 #layout_form,
 #odometer_form,
-#layout_form:hover{
+#layout_form:hover {
     border-top: 2px solid #D9D9D9;
     border-right: 2px solid #D9D9D9;
     border-bottom: 2px solid #D9D9D9;
@@ -319,10 +313,11 @@ form {
 
 .new-year {
     position: relative;
-    top: 0;
-    right: 4%;
+    width: 200px;
+    align-self: center;
     visibility: hidden;
     transition: .3s ease-in-out;
+    right: 7.5%;
 }
 
 .new-year-value,
@@ -332,6 +327,21 @@ form {
     top: 0;
     left: 0;
     width: 100%;
+}
+
+.year-arrow {
+    display: flex;
+    width: 39px;
+    height: 27px;
+    margin-top: 25px;
+    transition: .3s ease-in-out, opacity 1.5s;
+    z-index: 4;
+    cursor: pointer;
+    margin-left: 0;
+    position: relative;
+    left: 175%;
+    opacity: 0;
+    scale: 0;
 }
 
 .new-year-value {

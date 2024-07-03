@@ -140,7 +140,7 @@ window.onload = function(){
         nextArrow.css({ width: "0px", height: "0px" });
         newYear.css({ top: "40%" });
         formEdit.css({ left: "50%", visibility: "visible" });
-        yearArrow.css({ top: "215%", opacity: 1, scale: 1 });
+        yearArrow.css({ top: "0%", opacity: 1, scale: 1, visibility: "visible" });
     })
 
     window.scrollTo(0, 0);
