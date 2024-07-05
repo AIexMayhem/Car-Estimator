@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/dashboard_style.css">
+    <script type="text/javascript" src="scripts/dashboard.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <title></title>
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Expires" CONTENT="-1">
+</head>
+
+<body>
+<div class="dashboard">
+    <div class="dash_header">
+        <div class="scroll-container" id="scroll_gallery">
+        </div>
+        <div class="prev">&#10094;</div>
+        <div class="next">&#10095;</div>
+        <div id="car_name"></div>
+        <div id="car_info"></div>
+    </div>
+    <div class="dash_footer">
+        <div class="car_graphs">
+            <div class="price_logo">График изменения цены</div>
+            <div class="graphs">
+                <div id="year_graph"></div>
+                <div id="blocks">
+                    <div id="year_price">
+                        <div id="year_text"></div>
+                        <span id="car_price"></span>
+                    </div>
+                    <div id="sells">
+                        <div id="sell_text"></div>
+                        <span id="car_sell"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

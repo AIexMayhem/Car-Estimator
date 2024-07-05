@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f3fab49a-49e8-413c-8178-9fb9203446b1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Car_Estimator.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/LibreBarcode39Text-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Montserrat-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/Black.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/Car.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/Group 23.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/Middle one white.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/White.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/cars_group.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/next.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/analyze.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/car_dummies.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/graph.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/linear_model.sav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pictures.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/sells.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/dashboard_style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main_page_style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/Body.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/Color.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/Make.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/Make_Model.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/Model.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/main_page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/dashboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/main_page.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2hC5RAD28JSqGGevttY9RxnEYX4" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "<unknown>",
+    "javascript.nodejs.core.library.configured.version": "20.15.0",
+    "javascript.nodejs.core.library.typings.version": "20.14.10",
+    "last_opened_file_path": "C:/Program Files/nodejs/node.exe",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "C:/Program Files/nodejs/node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.nodejs",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="analyze" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Car_Estimator" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/analyze.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.17011.90" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f3fab49a-49e8-413c-8178-9fb9203446b1" name="Changes" comment="" />
+      <created>1717085208648</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1717085208648</updated>
+      <workItem from="1717085209717" duration="7718000" />
+      <workItem from="1717139400006" duration="8003000" />
+      <workItem from="1718099948202" duration="3891000" />
+      <workItem from="1718132991046" duration="7989000" />
+      <workItem from="1718174237038" duration="4637000" />
+      <workItem from="1718270416560" duration="625000" />
+      <workItem from="1719139881549" duration="4952000" />
+      <workItem from="1719982778432" duration="5738000" />
+      <workItem from="1720000254007" duration="2953000" />
+      <workItem from="1720014912521" duration="6836000" />
+      <workItem from="1720208493659" duration="2674000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
