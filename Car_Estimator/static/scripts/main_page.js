@@ -51,17 +51,38 @@ let addListenersToSearchContainer = function () {
         inputField.addEventListener('input', function () {
             dropdown.classList.add('open');
             const inputValue = inputField.value.toLowerCase();
+            let make = document.getElementById("make_form").value;
             if (inputValue.length > 0) {
                 for (let j = 0; j < valueArray.length; j++) {
                     if (!(inputValue.substring(0, inputValue.length) === valueArray[j].substring(0, inputValue.length).toLowerCase())) {
                         dropdownItems[j].classList.add('closed');
                     } else {
-                        dropdownItems[j].classList.remove('closed');
+                        if (inputField.id === "model_form" && make !== '') {
+                            if (makes.get(make).includes(valueArray[j])) {
+                                dropdownItems[j].classList.remove('closed')
+                            }
+                            else {
+                                dropdownItems[j].classList.add('closed');
+                            }
+                        }
+                        else {
+                            dropdownItems[j].classList.add('closed');
+                        }
                     }
                 }
             } else {
                 dropdownItems.forEach(function (item) {
-                    item.classList.remove('closed');
+                    if (inputField.id === "model_form" && make !== '') {
+                        if (makes.get(make).includes(item.textContent)) {
+                            item.classList.remove('closed')
+                        }
+                        else {
+                            item.classList.add('closed');
+                        }
+                    }
+                    else {
+                        item.classList.remove('closed');
+                    }
                 });
             }
         });

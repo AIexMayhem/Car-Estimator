@@ -5,41 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3fab49a-49e8-413c-8178-9fb9203446b1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Car_Estimator.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/LibreBarcode39Text-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/Montserrat-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/Black.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/Car.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/Group 23.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/Middle one white.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/White.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/cars_group.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/down.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/next.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/analyze.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/car_dummies.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/graph.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/linear_model.sav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pictures.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/sells.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/dashboard_style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main_page_style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/Body.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/Color.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/Make.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/Make_Model.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/Model.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/main_page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/dashboard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/main_page.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scripts/main_page.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/scripts/main_page.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,25 +31,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "<unknown>",
-    "javascript.nodejs.core.library.configured.version": "20.15.0",
-    "javascript.nodejs.core.library.typings.version": "20.14.10",
-    "last_opened_file_path": "C:/Program Files/nodejs/node.exe",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "C:/Program Files/nodejs/node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.nodejs",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;&lt;unknown&gt;&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.15.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.14.10&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/nodejs/node.exe&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;C:/Program Files/nodejs/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="analyze" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Car_Estimator" />
@@ -133,6 +100,7 @@
       <workItem from="1720000254007" duration="2953000" />
       <workItem from="1720014912521" duration="6836000" />
       <workItem from="1720208493659" duration="2674000" />
+      <workItem from="1720213432693" duration="1987000" />
     </task>
     <servers />
   </component>
