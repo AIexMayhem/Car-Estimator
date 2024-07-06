@@ -6,7 +6,7 @@ To launch app you should lead this plan:
 2) Launch backend/analyze.py
 3) Download node.js
 4) Launch node server.js
-5) Open [localhost](http://localhost:80/)
+5) Open [localhost](http://localhost:80/) :port 80
 6) Insert you car species
 7) Get car price and info
 
