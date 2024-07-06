@@ -22,4 +22,4 @@ Backend: Ospelnikov Alexey, Ananiev Nikita\
 Data-science: Grigory Kapustin, Ospelnikov Alexey, Ananiev Nikita
 
 
-Stack: HTML + CSS, JS, Python + Flask
+Stack: HTML + CSS, JS + Node.js, Python + Flask
