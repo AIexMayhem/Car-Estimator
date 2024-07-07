@@ -39,6 +39,14 @@ let addListenersToSearchContainer = function () {
         const dropdownItems = Array.from(dropdown.querySelectorAll('li'));
 
         const valueArray = [];
+
+        inputField.addEventListener("keypress", function(event) {
+            // If the user presses the "Enter" key on the keyboard
+            if (event.key === "Enter") {
+                // Cancel the default action, if needed
+                event.preventDefault();
+            }
+        });
         dropdownItems.forEach(function (item) {
             valueArray.push(item.textContent);
         });
@@ -174,6 +182,8 @@ window.onload = function(){
         searchContainer = $(".search-container"),
         searchText = $(".search_text"),
         newYear = $(".new-year"),
+        newYearForm = document.getElementById("yearsell_form"),
+        odometer = document.getElementById("odometer_form"),
         nextArrow = $(".next-arrow"),
         formEdit = $("form"),
         yearArrow = $(".year-arrow"),
@@ -193,6 +203,8 @@ window.onload = function(){
     loadUniqueDataToLi("body_input", "../files/Body.txt");
     loadMakeMap();
 
+
+
     nextArrow.on("click", function () {
         nextArrow.css({ width: "0px", height: "0px" });
         newYear.css({ top: "40%" });
@@ -200,6 +212,25 @@ window.onload = function(){
         yearArrow.css({ top: "0%", opacity: 1, scale: 1, visibility: "visible" });
     })
 
+    newYearForm.addEventListener("keypress", function(event) {
+        // If the user presses the "Enter" key on the keyboard
+        if (event.key === "Enter") {
+            console.log('2442')
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Trigger the button element with a click
+            document.getElementById("year_arrow").click();
+        }
+    });
+    odometer.addEventListener("keypress", function(event) {
+        // If the user presses the "Enter" key on the keyboard
+        if (event.key === "Enter") {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Trigger the button element with a click
+            document.getElementById("next_arrow").click();
+        }
+    });
     window.scrollTo(0, 0);
     logo.css({ opacity: 1 });
 
@@ -220,15 +251,29 @@ window.onload = function(){
     })
 
     yearArrow.on("click", function() {
-        localStorage.setItem("Make", document.getElementById("make_form").value);
-        localStorage.setItem("Model", document.getElementById("model_form").value);
-        localStorage.setItem("Year", document.getElementById("year_form").value);
-        localStorage.setItem("Color", document.getElementById("color_form").value);
-        localStorage.setItem("HP", document.getElementById("HP_form").value);
-        localStorage.setItem("Body", document.getElementById("body_form").value);
-        localStorage.setItem("Odometer", document.getElementById("odometer_form").value);
-        localStorage.setItem("Yearsell", document.getElementById("yearsell_form").value);
-        window.location.href = "dashboard.html";
+        let Make = document.getElementById("make_form").value,
+            Model = document.getElementById("model_form").value,
+            Year = document.getElementById("year_form").value,
+            Color = document.getElementById("color_form").value,
+            HP = document.getElementById("HP_form").value,
+            Body = document.getElementById("body_form").value,
+            Odometer = document.getElementById("odometer_form").value,
+            Yearsell = document.getElementById("yearsell_form").value;
+        if (Make === '' || Model === '' || Year === '' || Color === '' ||
+            HP === '' || Body === '' || Odometer === '' || Yearsell === '') {
+            alert("Введите все характеристики")
+        }
+        else {
+            localStorage.setItem("Make", Make);
+            localStorage.setItem("Model", Model);
+            localStorage.setItem("Year", Year);
+            localStorage.setItem("Color", Color);
+            localStorage.setItem("HP", HP);
+            localStorage.setItem("Body", Body);
+            localStorage.setItem("Odometer", Odometer);
+            localStorage.setItem("Yearsell", Yearsell);
+            window.location.href = "dashboard.html";
+        }
     })
 
     setTimeout(() => { addListenersToSearchContainer(); }, 1000);
