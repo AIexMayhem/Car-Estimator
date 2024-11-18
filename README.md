@@ -18,7 +18,7 @@ Idea author: Grigory Kapustin\
 Frontend: Ospelnikov Alexey, Yakshin Artemiy\
 Design: Yakshin Artemiy, Ospelnikov Alexey\
 Backend: Ospelnikov Alexey, Ananiev Nikita\
-Data-science: Grigory Kapustin, Ospelnikov Alexey, Ananiev Nikita
+Data-science: Grigory Kapustin, Maxim Mordovkin, Ospelnikov Alexey, Ananiev Nikita
 
 
 Stack: HTML + CSS, JS + Node.js, Python + Flask
