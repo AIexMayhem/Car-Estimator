@@ -17,7 +17,7 @@ Tech-lead: Ospelnikov Alexey\
 Idea author: Grigory Kapustin\
 Frontend: Ospelnikov Alexey, Yakshin Artemiy\
 Design: Yakshin Artemiy, Ospelnikov Alexey\
-Backend: Ospelnikov Alexey, Ananiev Nikita\
+Backend: Ospelnikov Alexey, Ananiev Nikita, Yakshin Artemiy\
 Data-science: Grigory Kapustin, Maxim Mordovkin, Ospelnikov Alexey, Ananiev Nikita
 
 
