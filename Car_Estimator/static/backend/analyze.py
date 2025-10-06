@@ -1,116 +1,104 @@
-from flask import Flask, request
-import flask
-import json
-from flask_cors import CORS
+import os
 import joblib
 import pandas as pd
-import scipy
-import random
 import numpy as np
-from scipy.interpolate import make_interp_spline, BSpline
+import random
+from scipy.interpolate import make_interp_spline
 import matplotlib.pyplot as plt
-
-app = Flask(__name__)
-CORS(app)
-plt.switch_backend('agg')
-
-load_model = joblib.load(open("linear_model.sav", 'rb'))
-cars_dummies = pd.read_csv("car_dummies.csv")
-pics = pd.read_csv("pictures.csv")
-sells = pd.read_csv("sells.csv")
+from io import BytesIO
 
 
-def graph_build(make: str, model: str, year: int, hp: int, body: str, yearsell: int, odometer: int, color: str):
-    xlabel = []
-    ylabel = []
-    period = 8
-    yearsell -= 4
-    for year_num in range(period):
-        yearsell += 1
-        y_pred = get_car_info(make, model, year, hp, body, yearsell, odometer, color)
-        if y_pred > 0:
-            xlabel.append(y_pred)
-        else:
-            xlabel.append(0)
-        ylabel.append(yearsell)
-        if year_num:
-            xlabel[year_num] = xlabel[year_num] * (1 - (18700 * year_num) ** (-0.17))
+class Car:
+    def __init__(self, make: str, model: str, year: int, hp: int,
+                 body: str, yearsell: int, odometer: int, color: str, 
+                 test=False, load_model=None, pics=None, sells=None, feats=None):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.hp = hp 
+        self.body = body
+        self.yearsell = yearsell
+        self.odometer = odometer
+        self.color = color
 
-    xnew = np.linspace(min(ylabel), max(ylabel), 300)
-    spl = make_interp_spline(ylabel, xlabel, k=3)  # type: BSpline
-    power_smooth = spl(xnew)
-    plt.clf()
-    plt.box(False)
-    plt.plot(xnew, power_smooth, color="#4D869D")
-    ymin, ymax = int(min(power_smooth)), int(max(power_smooth))
-    for i in range(ymin, ymax, (ymax - ymin) // 4):
-        plt.axhline(y=i, alpha=0.1, color="black")
-    plt.savefig('graph.png')
+        self.load_model = load_model
+        self.feats = feats
+        self.pics = pics
+        self.sells = sells
 
 
-def get_car_info(make: str, model: str, year: int, hp: int, body: str, yearsell: int, odometer: int, color: str):
-    dummy = {"Year": year, "HP": hp, "Odometer": odometer, "Yearsell": yearsell}
-    for col in list(cars_dummies.columns)[5:]:
-        dummy[col] = False
+    def get_photos(self) -> list[str]:
+        key = f"{self.make.replace(' ', '_')}/{self.model.replace(' ', '_')}/{self.year}"
+        for _, row in self.pics.iterrows():
+            if row['Car'] == key:
+                photos = row['Pics'].split()
+                while 0 < len(photos) < 3:
+                    photos.append(photos[0])
+                return photos
+        return []
 
-    dummy["Make_" + make] = True
-    dummy["Model_" + model] = True
-    dummy["Body_" + body] = True
-    dummy["Color_" + color] = True
+    def get_sells(self) -> int:
+        key = f"{self.make} | {self.model}"
+        for _, row in self.sells.iterrows():
+            if row['Car'] == key:
+                return int(row['Count'])
+        return 0
+    
+    def get_car_info(self) -> int:
+        dummy = dict.fromkeys(self.feats, 0)
 
-    dummy = pd.DataFrame(dummy, index=[0])
-    y_pred = load_model.predict(dummy)
-    price = int(np.round(y_pred[0], 0))
-    if price < 0:
-        price = 200
-    return price + random.randint(-price // 10, price // 10)
+        for k, v in {
+            'Year': self.year,
+            'HP': self.hp,
+            'Odometer': self.odometer,
+            'Yearsell': self.yearsell
+        }.items():
+            if k in dummy:
+                dummy[k] = v
+
+        for prefix, val in (
+            ('Make_', self.make.replace(' ', '_')),
+            ('Model_', self.model.replace(' ', '_')),
+            ('Body_', self.body),
+            ('Color_', self.color)
+        ):
+            col = f"{prefix}{val}"
+            if col in dummy:
+                dummy[col] = 1
+
+        df = pd.DataFrame([dummy], columns=self.feats)
+        y_pred = self.load_model.predict(df)[0]
+        price = round(y_pred, 0)
+
+        return price
+
+    def get_graph_data(self, period=8) -> dict:
+        xs, ys = [], []
+        base_year = self.yearsell - period // 2
+
+        for i in range(period):
+            y = base_year + i + 1
+            price = self.get_car_info()
+            xs.append(y)
+            ys.append(price if price > 0 else 0)
+
+        xnew = np.linspace(min(xs), max(xs), 300)
+        
+        return { 'x_axis': xs, 'y_axis': ys, 'x_new_axis': xnew }
+
+    def graph_build(self) -> bytes:
+        data = self.get_graph_data()
+        xs, ys, xnew = data['x_axis'], data['y_axis'], data['x_new_axis']
+        spl = make_interp_spline(xs, ys, k=3)
+        smooth = spl(xnew)
+        plt.clf()
+        plt.plot(xnew, smooth)
+        plt.box(False)
+
+        buf = BytesIO()
+        plt.savefig(buf, format='png')
+        buf.seek(0)
+        return buf.read()
 
 
-def get_photos(make: str, model: str, year: int):
-    make = make.replace(" ", "_")
-    model = model.replace(" ", "_")
-    model = model.replace(" Series", "-Series")
 
-    model = model.replace("Town_&_Country", "town_country")
-    model = model.replace("Gran_Turismo", "GranTurismo")
-    model = model.replace("MX-5_Miata", "MX-5")
-    link = make + '/' + model + '/' + str(year)
-    pictures = []
-    for car_num in range(len(pics)):
-        if pics.Car[car_num] == link:
-            pictures = pics.Pics[car_num].split()
-            print(pictures)
-    return pictures
-
-
-def get_sells(make: str, model: str):
-    sell = 0
-    for car_num in range(len(sells)):
-        if sells.Car[car_num] == (make + ' | ' + model):
-            sell = int(sells.Count[car_num])
-    return sell
-
-
-@app.route('/car', methods=["GET", "POST"])
-def car():
-    print("users endpoint reached...")
-    if request.method == "GET":
-        pass
-    if request.method == "POST":
-        received_data = request.get_json()
-        print(f"received data: {received_data}")
-
-        message = received_data['data']
-        car_info = get_car_info(*message)
-        return_data = {
-            "status": "success",
-            "Price": car_info,
-            "Photos": get_photos(*message[:3]),
-            "Sell": get_sells(*message[:2])
-        }
-        graph_build(*message)
-        return flask.Response(response=json.dumps(return_data), status=201)
-
-
-if __name__ == "__main__":
-    app.run("localhost", 6969)
