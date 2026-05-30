@@ -232,9 +232,9 @@ pytest
 
 ## Авторы
 
-- Tech lead: Ospelnikov Alexey
-- Идея: Grigory Kapustin
-- Frontend: Ospelnikov Alexey, Yakshin Artemiy
-- Дизайн: Yakshin Artemiy, Ospelnikov Alexey
-- Backend: Ospelnikov Alexey, Ananiev Nikita, Yakshin Artemiy
-- Data science: Grigory Kapustin, Maxim Mordovkin, Ospelnikov Alexey, Ananiev Nikita
+- Tech lead: Оспельников Алексей
+- Идея: Капустин Григорий
+- Frontend: Оспельников Алексей, Якшин Артемий
+- Дизайн: Якшин Артемий, Оспельников Алексей
+- Backend: Оспельников Алексей, Ананьев Никита, Якшин Артемий 
+- Data science: Капустин Григорий, Оспельников Алексей, Ананьев Никита
