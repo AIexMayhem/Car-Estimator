@@ -1,0 +1,5 @@
+*.DS_Store
+Car_Estimator/dist/
+Car_Estimator/node_modules/
+__pycache__/
+*.pyc
